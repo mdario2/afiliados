@@ -19,9 +19,7 @@ public class Conexion {
         Connection conex = null;
         try {
             conex = DriverManager.getConnection("jdbc:mysql://localhost:3306/platziblog","root","");
-            if(conex != null){
-                System.out.println("CONEXION EXITOSA");
-            }
+            
         } catch (SQLException e) {
             System.out.println(e);
         }
