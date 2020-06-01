@@ -42,7 +42,10 @@ public class AfiliadoController {
         
     }
     public void deleteAfiliado(){
-        
+        Scanner sc = new Scanner(System.in);
+        System.out.println("digite el id del afiliado a borrar: ");
+        int id = sc.nextInt();
+        afdao.deleteAfiliadoDB(id);
     }
     public void updateAfiliado(){
         

@@ -36,7 +36,12 @@ public class Inicio {
                 case 2:
                     ac.readAfiliados();
                     break;
-
+                case 3:
+                    ac.updateAfiliado();
+                    break;
+                case 4:
+                    ac.deleteAfiliado();
+                    break;
                 default:
                     break;
             }

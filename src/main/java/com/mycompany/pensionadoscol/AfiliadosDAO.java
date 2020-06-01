@@ -74,6 +74,21 @@ public class AfiliadosDAO {
     }
     
     public void deleteAfiliadoDB(int id_afiliado){
-        
+        Conexion dbconnect = new Conexion();
+        try(Connection conexion = dbconnect.getConecction()){
+            PreparedStatement ps = null;
+            try{
+                String query="DELETE FROM afiliado "
+                        + "WHERE idafiliado = ?";
+                ps = conexion.prepareStatement(query);
+                ps.setInt(1, id_afiliado);
+                ps.executeUpdate();
+                System.out.println("El afiliado ha sido borrado");
+            }catch(SQLException ex){
+            System.out.println(ex);
+        }
+        }catch(SQLException e){
+            System.out.println(e);
+        }
     }
 }
