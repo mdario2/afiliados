@@ -6,6 +6,7 @@
 package com.mycompany.pensionadoscol;
 
 import java.sql.Connection;
+import java.util.Scanner;
 
 /**
  *
@@ -13,13 +14,33 @@ import java.sql.Connection;
  */
 public class Inicio {
     public static void main(String[] args) {
-        Conexion conexion = new Conexion();
-        try(Connection cnx = conexion.getConecction() ) {
-                    
+        Scanner sc  = new Scanner(System.in);
         
+        int opcion =0;
+        
+        do {            
+            System.out.println("-------------------------");
+            System.out.println("App afiliados a fondos de pensiones");
+            System.out.println("1. Create afiliado");
+            System.out.println("2. Read afiliado");
+            System.out.println("3. Update afiliado");
+            System.out.println("4. Delete afiliado");
+            System.out.println("5. Salir");
+            //Leemos la opcion del teclado
+            opcion = sc.nextInt();
+        } while (opcion != 5);
+        
+        
+        
+        
+        
+        /*Conexion conexion = new Conexion();
+        try (Connection cnx = conexion.getConecction()) {
 
         } catch (Exception e) {
             System.out.println(e);
-        }
+        }*/
+        
+        
     }
 }

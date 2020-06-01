@@ -15,6 +15,7 @@ import java.sql.SQLException;
  * @author mdari
  */
 public class Conexion {
+    
     public Connection getConecction(){
         Connection conex = null;
         try {

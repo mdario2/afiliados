@@ -5,21 +5,33 @@
  */
 package com.mycompany.pensionadoscol;
 
+import java.util.Scanner;
+
 /**
  *
  * @author mdari
  */
 public class AfiliadoController {
-    public void crearAfiliado(){
+    public void createAfiliado(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("digite departamento: ");
+        String department = sc.nextLine();
+        System.out.println("Digite municipio: ");
+        String municipio = sc.nextLine();
+        System.out.println("Digite genero (F/M)?:");
+        char genero = sc.next().charAt(0);
+        System.out.println("Ingrese cantidad: ");
+        int cantidad = sc.nextInt();
+        
+        Afiliado af = new Afiliado(department, municipio, genero, cantidad);
+    }
+    public void readAfiliados(){
         
     }
-    public void listarAfiliados(){
+    public void deleteAfiliado(){
         
     }
-    public void borrarAfiliado(){
-        
-    }
-    public void editarAfiliado(){
+    public void updateAfiliado(){
         
     }
 }

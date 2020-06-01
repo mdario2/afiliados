@@ -1,2 +1,5 @@
 com\mycompany\pensionadoscol\Inicio.class
+com\mycompany\pensionadoscol\AfiliadosDAO.class
 com\mycompany\pensionadoscol\Conexion.class
+com\mycompany\pensionadoscol\Afiliado.class
+com\mycompany\pensionadoscol\AfiliadoController.class

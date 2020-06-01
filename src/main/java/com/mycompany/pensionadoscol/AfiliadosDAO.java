@@ -5,25 +5,48 @@
  */
 package com.mycompany.pensionadoscol;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 /**
  *
  * @author mdari
  */
 public class AfiliadosDAO {
     //CRUD
-    public void crearAfiliadoDB(Afiliado afiliado){
+    public void createAfiliadoDB(Afiliado afiliado) {
+        Conexion dbconnect = new Conexion();
+        try (Connection conexion = dbconnect.getConecction()) {
+
+            PreparedStatement ps = null;
+            try {
+                String query = "INSERT INTO afiliado (departamento, municipio, genero, cantidad) VALUES (?,?,?,?)";
+                ps = conexion.prepareStatement(query);
+                ps.setString(1,afiliado.getDepartamento());
+                ps.setString(2, afiliado.getMunicipio());
+                ps.setString(3, String.valueOf(afiliado.getGenero()));
+                ps.setInt(4, afiliado.getCantidad());
+                ps.executeUpdate();
+                System.out.println("Afiliado creado");
+            } catch (SQLException ex) {
+                System.out.println(ex);
+            }
+
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+    }
+    
+    public void readAfiliadoDB(){
         
     }
     
-    public void leerAfiliadoDB(){
+    public void updateAfiliadoDB(Afiliado afiliado){
         
     }
     
-    public void actualizarAfiliadoDB(Afiliado afiliado){
-        
-    }
-    
-    public void eliminarAfiliadoDB(int id_afiliado){
+    public void deleteAfiliadoDB(int id_afiliado){
         
     }
 }
