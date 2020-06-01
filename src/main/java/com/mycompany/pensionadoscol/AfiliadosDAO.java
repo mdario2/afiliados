@@ -70,7 +70,25 @@ public class AfiliadosDAO {
     }
     
     public void updateAfiliadoDB(Afiliado afiliado){
-        
+        Conexion dbconnect = new Conexion();
+        try(Connection conexion = dbconnect.getConecction()){
+            PreparedStatement ps = null;
+            try{
+                String query = "UPDATE afiliado SET municipio = ? "
+                        + "WHERE idafiliado = ?";
+                ps = conexion.prepareStatement(query);
+                ps.setString(1, afiliado.getMunicipio());
+                ps.setInt(2, afiliado.getId_afiliado());
+                ps.executeUpdate();
+                System.out.println("El afiliado se actualizo correctamente");
+                
+            }catch(SQLException ex){
+                System.out.println(ex);
+                System.out.println("No se pudo actualizar el afiliado");
+            }
+        }catch(SQLException e){
+            System.out.println(e);
+        }
     }
     
     public void deleteAfiliadoDB(int id_afiliado){

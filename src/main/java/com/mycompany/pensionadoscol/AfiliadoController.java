@@ -49,5 +49,15 @@ public class AfiliadoController {
     }
     public void updateAfiliado(){
         
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Ingrese el nuevo municipio del afiliado: ");
+        String municipio = sc.nextLine();
+        System.out.println("digite el id del afiliado a actualizar el municipio: ");
+        int id = sc.nextInt();
+        Afiliado afiliado = new Afiliado();
+        afiliado.setId_afiliado(id);
+        afiliado.setMunicipio(municipio);
+        afdao.updateAfiliadoDB(afiliado);
     }
 }

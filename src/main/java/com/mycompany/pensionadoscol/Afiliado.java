@@ -61,6 +61,16 @@ public class Afiliado {
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
+
+    public int getId_afiliado() {
+        return id_afiliado;
+    }
+
+    public void setId_afiliado(int id_afiliado) {
+        this.id_afiliado = id_afiliado;
+    }
+    
+    
     
     
     
