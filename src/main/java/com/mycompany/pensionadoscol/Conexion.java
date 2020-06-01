@@ -19,7 +19,7 @@ public class Conexion {
     public Connection getConecction(){
         Connection conex = null;
         try {
-            conex = DriverManager.getConnection("jdbc:mysql://localhost:3306/platziblog","root","");
+            conex = DriverManager.getConnection("jdbc:mysql://localhost:3306/pensionados","root","");
             
         } catch (SQLException e) {
             System.out.println(e);

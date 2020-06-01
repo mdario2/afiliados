@@ -12,7 +12,8 @@ import java.util.Scanner;
  * @author mdari
  */
 public class AfiliadoController {
-    public void createAfiliado(){
+    public static void createAfiliado(){
+        
         Scanner sc = new Scanner(System.in);
         System.out.println("digite departamento: ");
         String department = sc.nextLine();
@@ -23,7 +24,15 @@ public class AfiliadoController {
         System.out.println("Ingrese cantidad: ");
         int cantidad = sc.nextInt();
         
-        Afiliado af = new Afiliado(department, municipio, genero, cantidad);
+        Afiliado af = new Afiliado();
+        af.setDepartamento(department);
+        af.setMunicipio(municipio);
+        af.setGenero(genero);
+        af.setCantidad(cantidad);
+        
+        AfiliadosDAO afdao = new AfiliadosDAO();
+        afdao.createAfiliadoDB(af);
+        
     }
     public void readAfiliados(){
         

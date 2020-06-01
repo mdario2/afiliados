@@ -28,15 +28,28 @@ public class Inicio {
             System.out.println("5. Salir");
             //Leemos la opcion del teclado
             opcion = sc.nextInt();
+             // AfiliadoController ac = new AfiliadoController();
+        switch (opcion){
+            case 1:
+                System.out.println("enttrooooooo");
+                AfiliadoController.createAfiliado();
+                break;
+            
+            default:
+                break;
+        }
+            
+            
+            
         } while (opcion != 5);
         
+      
         
-        
-        
+               
         
         /*Conexion conexion = new Conexion();
         try (Connection cnx = conexion.getConecction()) {
-
+           
         } catch (Exception e) {
             System.out.println(e);
         }*/
