@@ -28,16 +28,18 @@ public class Inicio {
             System.out.println("5. Salir");
             //Leemos la opcion del teclado
             opcion = sc.nextInt();
-             // AfiliadoController ac = new AfiliadoController();
-        switch (opcion){
-            case 1:
-                System.out.println("enttrooooooo");
-                AfiliadoController.createAfiliado();
-                break;
-            
-            default:
-                break;
-        }
+              AfiliadoController ac = new AfiliadoController();
+            switch (opcion) {
+                case 1:
+                    ac.createAfiliado();
+                    break;
+                case 2:
+                    ac.readAfiliados();
+                    break;
+
+                default:
+                    break;
+            }
             
             
             

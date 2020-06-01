@@ -5,8 +5,10 @@
  */
 package com.mycompany.pensionadoscol;
 
+import com.mysql.cj.protocol.Resultset;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
@@ -39,7 +41,32 @@ public class AfiliadosDAO {
     }
     
     public void readAfiliadoDB(){
-        
+        Conexion dbconnect = new Conexion();
+        try(Connection conexion = dbconnect.getConecction()){
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+            try{
+                String query = "SELECT * from afiliado";
+                ps = conexion.prepareStatement(query);
+                rs = ps.executeQuery();
+                
+                while(rs.next()){
+                    System.out.println("ID: "+rs.getInt("idafiliado"));
+                    System.out.println("Dpto: "+rs.getString("departamento"));
+                    System.out.println("Municipio: "+rs.getString("municipio"));
+                    System.out.println("Genero: "+rs.getCharacterStream("genero"));
+                    System.out.println("Cantidad: "+rs.getInt("cantidad"));
+                    System.out.println("");
+                }
+                
+                
+            }catch(SQLException ex){
+                System.out.println("no se pudieron recuperar los afiliados");
+                System.out.println(ex);
+            }
+        }catch(SQLException e){
+            System.out.println(e);
+        }
     }
     
     public void updateAfiliadoDB(Afiliado afiliado){

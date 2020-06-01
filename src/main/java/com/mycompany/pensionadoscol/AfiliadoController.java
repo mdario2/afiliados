@@ -12,7 +12,9 @@ import java.util.Scanner;
  * @author mdari
  */
 public class AfiliadoController {
-    public static void createAfiliado(){
+    
+    AfiliadosDAO afdao = new AfiliadosDAO();
+    public void createAfiliado(){
         
         Scanner sc = new Scanner(System.in);
         System.out.println("digite departamento: ");
@@ -30,11 +32,13 @@ public class AfiliadoController {
         af.setGenero(genero);
         af.setCantidad(cantidad);
         
-        AfiliadosDAO afdao = new AfiliadosDAO();
+        
         afdao.createAfiliadoDB(af);
         
     }
     public void readAfiliados(){
+        
+        afdao.readAfiliadoDB();
         
     }
     public void deleteAfiliado(){
